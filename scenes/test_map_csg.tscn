@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca5bv3l551mp8"]
+[gd_scene load_steps=16 format=3 uid="uid://ca5bv3l551mp8"]
 
 [ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="1_eoh8a"]
+[ext_resource type="Texture2D" uid="uid://7o1wtroohvt3" path="res://textures/noise-base.png" id="1_utxhk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eoh8a"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,6 +44,87 @@ void fragment() {
 render_priority = 0
 shader = SubResource("Shader_0echa")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bd3d"]
+albedo_color = Color(0, 0.46666667, 0.08627451, 1)
+albedo_texture = ExtResource("1_utxhk")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_utxhk"]
+noise_type = 0
+frequency = 0.1501
+fractal_gain = 1.25
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bd3d"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_utxhk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17evi"]
+albedo_color = Color(0, 0.61016357, 0.048690274, 1)
+albedo_texture = SubResource("NoiseTexture2D_1bd3d")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utxhk"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 9.6
+
+[sub_resource type="Animation" id="Animation_utxhk"]
+resource_name = "daynightcycle"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, -0.36090517, 0.1743468, 0.0688757, 0.9135682, 15.166667, 1, 0.6416812, 0.01991684, 0.18639742, 0.74370986, 29.9, 1, -0.10522411, 0.14978279, 0.11272004, 0.9766203)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 14.933333, 29.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.26, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1bd3d"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.36090517, 0.1743468, 0.0688757, 0.9135682)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17evi"]
+_data = {
+&"RESET": SubResource("Animation_1bd3d"),
+&"daynightcycle": SubResource("Animation_utxhk")
+}
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -59,8 +141,33 @@ material = SubResource("ShaderMaterial_eoh8a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 size = Vector3(28, 1, 26)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -24.5)
+size = Vector3(28, 1, 24)
+material = SubResource("StandardMaterial3D_1bd3d")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, -24.5)
+size = Vector3(28, 1, 24)
+material = SubResource("StandardMaterial3D_17evi")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.384687, 4, -24)
+radius = 2.0
+material = SubResource("StandardMaterial3D_utxhk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGCombiner3D/CSGSphere3D"]
+light_color = Color(0, 1, 1, 1)
+omni_range = 10.810936
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_eoh8a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.86814684, 0.28408808, -0.40695822, 0, 0.8199721, 0.5724035, 0.4963074, -0.49693027, 0.7118562, 0, 0, 0)
+transform = Transform3D(0.9297188, -0.25169063, 0.2688402, -2.9802326e-08, 0.7300071, 0.6834395, -0.3682706, -0.6354064, 0.6787013, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_17evi")
+}
+autoplay = "daynightcycle"
