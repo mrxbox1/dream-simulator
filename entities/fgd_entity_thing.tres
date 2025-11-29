@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=3 format=3 uid="uid://crcxeioa8il8x"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=4 format=3 uid="uid://crcxeioa8il8x"]
 
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_tk085"]
+[ext_resource type="Resource" uid="uid://ogtnpfowx1aj" path="res://entities/test_player.tres" id="2_4dt5c"]
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="8_7pgwd"]
 
 [resource]
 script = ExtResource("8_7pgwd")
 fgd_name = "DreamSimulator"
 base_fgd_files = Array[Resource]([ExtResource("1_tk085")])
+entity_definitions = Array[Resource]([ExtResource("2_4dt5c")])

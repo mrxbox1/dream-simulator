@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" load_steps=3 format=3 uid="uid://ogtnpfowx1aj"]
+
+[ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="1_3lrbr"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="1_nhi03"]
+
+[resource]
+script = ExtResource("1_nhi03")
+scene_file = ExtResource("1_3lrbr")
+classname = "test_player"
+description = "A testing character controller. (NOT FINAL)
+
+Note the fact that it's weirdly cube-shaped, this is because I couldn't figure how to create a proper model for it. Although, at the same time, the weird size can be an advantage at best, forcing you to create enough space for the player to move around, or risk having some unwanted collision issues.
+
+Anyway, for those who really want it, here is some reference to the player's actual, in-game size:
+In Trenchbroom:      32 x 32 x 64 units
+In Godot's editor:     1 x 1 x 2 meters"
+meta_properties = {
+"color": Color(0.7529412, 0, 0.98039216, 1),
+"size": AABB(-32, -32, -32, 32, 32, 32)
+}
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"
