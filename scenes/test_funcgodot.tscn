@@ -1,0 +1,149 @@
+[gd_scene load_steps=17 format=4 uid="uid://wqsqanubbsl1"]
+
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_84nub"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_m8e4r"]
+[ext_resource type="Texture2D" uid="uid://0viemutak6qk" path="res://textures/grass-1.png" id="3_nei8r"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="4_a72k8"]
+[ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="5_a72k8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkvyb"]
+albedo_texture = ExtResource("3_nei8r")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dne10"]
+albedo_texture = ExtResource("4_a72k8")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wdavf"]
+_surfaces = [{
+"aabb": AABB(-9, -0.5001221, -18.5, 14.5, 1.0001221, 29.5),
+"attribute_data": PackedByteArray("AACwwAAAAL8AABBBAAAAvwAAEEEACAA/AACwwAAIAD8AADBBAAgAPwAAlMEACAA/AACUwQAAAL8AADBBAAAAvwAAMMEAABBBAAAwwQAAsMAAAJRBAACwwAAAlEEAABBBAAAwQQAAEEEAAJTBAAAQQQAAlMEAALDAAAAwQQAAsMAAADDBAAAAvwAAlEEAAAC/AACUQQAIAD8AADDBAAgAPwAAsEAACAA/AAAQwQAIAD8AABDBAAAAvwAAsEAAAAC/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_tkvyb"),
+"name": "grass-1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACwQAAAAD8AAJTBAAAQwQAAAD8AAJTBAAAQwQAIAL8AAJTBAACwQAAIAL8AAJTBAAAQwQAIAL8AADBBAAAQwQAIAL8AAJTBAAAQwQAAAD8AAJTBAAAQwQAAAD8AADBBAAAQwQAAAL8AADBBAACwQAAAAL8AADBBAACwQAAAAL8AAJTBAAAQwQAAAL8AAJTBAAAQwQAAAD8AADBBAAAQwQAAAD8AAJTBAACwQAAAAD8AAJTBAACwQAAAAD8AADBBAACwQAAAAD8AADBBAACwQAAAAD8AAJTBAACwQAAIAL8AAJTBAACwQAAIAL8AADBBAACwQAAIAL8AADBBAAAQwQAIAL8AADBBAAAQwQAAAD8AADBBAACwQAAAAD8AADBB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}, {
+"aabb": AABB(-9, 0.5, -18.5, 14.5, 4.2105265, 10),
+"attribute_data": PackedByteArray("AACQQKK8FsAAAJBAAACAvgAAMMAAAIC+AAAwwKK8FsAAAIjAAACAvgAAFMEAAIC+AAAUwaK8FsAAAIhAAACQQAAAiEAAADDAAAAUQQAAMMAAABRBAACQQAAAFEGivBbAAAAUQQAAgL4AAIhAAACAvotygMAAADDAi3KAwAAAkECOBhfBAACQQI4GF8EAADDA"),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABwAIAAkABwAJAAoACwAMAA0ADgAPABAADgAQABEA"),
+"material": SubResource("StandardMaterial3D_dne10"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAAQwaK8lkAAAJTBAAAQwQAAAD8AAJTBAACwQAAAAD8AAJTBAACwQKK8lkAAAJTBAAAQwQAAAD8AAAjBAAAQwQAAAD8AAJTBAAAQwaK8lkAAAJTBAAAQwQAAAD8AAAjBAACwQAAAAD8AAAjBAACwQAAAAD8AAJTBAAAQwQAAAD8AAJTBAACwQKK8lkAAAJTBAACwQAAAAD8AAJTBAACwQAAAAD8AAAjBAACwQAAAAD8oAAjBAAAQwQAAAD8oAAjBAAAQwYC8lkAAAJTBAACwQIC8lkAAAJTB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//7//fwAA//////9/AAD//////38AAP//////fwAA/////////3//////////f/////////9///////9/Etr/fwit/38S2v9/CK3/fxLa/38Irf9/Etr/fwit")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8nxgk"]
+points = PackedVector3Array(5.5, 0.5, 11, 5.5, -0.5, 11, -9, 0.5, 11, -9, -0.5, 11, 5.5, 0.5, -18.5, 5.5, -0.5, -18.5, -9, 0.5, -18.5, -9, -0.5, -18.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0o8yb"]
+points = PackedVector3Array(5.5000005, 0.5, -8.5, 5.5, 4.7105265, -18.5, -9, 0.5, -8.5, -9, 4.7105265, -18.5, 5.5, 0.5, -18.5, -9, 0.5, -18.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a72k8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_utxhk"]
+sky_material = SubResource("ProceduralSkyMaterial_a72k8")
+
+[sub_resource type="Environment" id="Environment_tkvyb"]
+background_mode = 2
+sky = SubResource("Sky_utxhk")
+tonemap_mode = 2
+
+[sub_resource type="Animation" id="Animation_1bd3d"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.36090517, 0.1743468, 0.0688757, 0.9135682)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_utxhk"]
+resource_name = "daynightcycle"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, -0.36090517, 0.1743468, 0.0688757, 0.9135682, 15.166667, 1, 0.6416812, 0.01991684, 0.18639742, 0.74370986, 29.9, 1, -0.10522411, 0.14978279, 0.11272004, 0.9766203)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:background_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 14.933333, 29.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.26, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17evi"]
+_data = {
+&"RESET": SubResource("Animation_1bd3d"),
+&"daynightcycle": SubResource("Animation_utxhk")
+}
+
+[node name="Node" type="Node"]
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("1_84nub")
+local_map_file = "uid://4epm1lxuffsm"
+map_settings = ExtResource("2_m8e4r")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_wdavf")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_8nxgk")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_0o8yb")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("5_a72k8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7684484, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tkvyb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9297186, -0.25169063, 0.2688402, -2.9802322e-08, 0.7300071, 0.6834395, -0.3682706, -0.6354064, 0.6787013, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_17evi")
+}
+autoplay = "daynightcycle"

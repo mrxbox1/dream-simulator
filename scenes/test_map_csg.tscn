@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ca5bv3l551mp8"]
 
 [ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="1_eoh8a"]
-[ext_resource type="Texture2D" uid="uid://7o1wtroohvt3" path="res://textures/noise-base.png" id="1_utxhk"]
+[ext_resource type="Texture2D" uid="uid://0viemutak6qk" path="res://textures/grass-1.png" id="1_utxhk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eoh8a"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,10 +45,9 @@ render_priority = 0
 shader = SubResource("Shader_0echa")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bd3d"]
-albedo_color = Color(0, 0.46666667, 0.1882353, 1)
 albedo_texture = ExtResource("1_utxhk")
 uv1_triplanar = true
-texture_filter = 2
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utxhk"]
 albedo_color = Color(0, 1, 1, 1)
