@@ -130,6 +130,9 @@ sky_material = SubResource("ProceduralSkyMaterial_a72k8")
 [sub_resource type="Environment" id="Environment_tkvyb"]
 background_mode = 2
 sky = SubResource("Sky_utxhk")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.8
 reflected_light_source = 1
 tonemap_mode = 2
 adjustment_enabled = true
@@ -223,3 +226,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tkvyb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.523535, 2.0988226, 22.362593)
+light_energy = 5.954
+omni_range = 8.33879
