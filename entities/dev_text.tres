@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" load_steps=4 format=3 uid="uid://dghoxo5e5c3sn"]
+
+[ext_resource type="PackedScene" uid="uid://x62m68ycv8q1" path="res://scenes/dev_text.tscn" id="1_xcbar"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_tr60c"]
+[ext_resource type="Script" uid="uid://byeitho8vnr72" path="res://scripts/dev_text.gd" id="3_tr60c"]
+
+[resource]
+script = ExtResource("2_tr60c")
+scene_file = ExtResource("1_xcbar")
+script_class = ExtResource("3_tr60c")
+classname = "dev_text"
+description = "A point entity that allows you to display billboarded text.
+Typically meant to be used for development purposes/prototyping stages."
+class_properties = {
+"size": 0,
+"text": "INSERT TEXT HERE"
+}
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

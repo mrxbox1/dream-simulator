@@ -660,19 +660,9 @@
 "classname" "dev_text"
 "origin" "-408 -536 168"
 "text" "from here: a view of a stroad. it's a hot day outside."
-"size" "12"
 }
 // entity 4
 {
 "classname" "dev_text"
 "origin" "-696 -408 168"
-"text" "empty playroom"
-"size" "12"
-}
-// entity 5
-{
-"classname" "dev_text"
-"origin" "-792 -824 168"
-"text" "exit to alley stairs"
-"size" "12"
 }
