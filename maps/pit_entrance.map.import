@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bsckt5hbioui"
+path="res://.godot/imported/pit_entrance.map-7336f79b538053cdc148350e9a865145.tres"
+
+[deps]
+
+source_file="res://maps/pit_entrance.map"
+dest_files=["res://.godot/imported/pit_entrance.map-7336f79b538053cdc148350e9a865145.tres"]
+
+[params]
+
