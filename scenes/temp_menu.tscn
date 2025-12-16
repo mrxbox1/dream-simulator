@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxre40bxodp5k"]
+
+[ext_resource type="Script" uid="uid://brlm1mj504mld" path="res://scripts/devbar.gd" id="1_q7tmt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6lgx"]
+font_size = 12
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 75.0
+text = "Welcome to the dev menu!
+
+(It's actually more of a scene select screen acting as a temporary main menu for
+the time being, but that sounds lamer, so \"dev menu\" it is!)
+(Though, I actually named the scene file of this screen \"temp_menu.tscn\"...I'm a very decisive person.)
+
+
+(A word of advice: maybe don't input the location of this scene (the one you're in right now.)
+(Godot doesn't like recursion when it comes to scenes, and even at runtime, I'm not sure what could happen.)
+
+Input the location of a .tscn file here and press ENTER to...well, enter that scene.
+I wanted to make a good UI with a list of scenes you could select, but sometimes, we just can't have nice things."
+label_settings = SubResource("LabelSettings_p6lgx")
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 267.0
+offset_right = 601.0
+offset_bottom = 298.0
+placeholder_text = "e.g. \"res://scenes/pit_entrance.tscn\""
+script = ExtResource("1_q7tmt")
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
