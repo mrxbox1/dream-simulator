@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck3sdcs5l8njj"]
+[gd_scene load_steps=4 format=3 uid="uid://ck3sdcs5l8njj"]
 
 [ext_resource type="Script" uid="uid://bjckb8ehmkb7c" path="res://scripts/test_player.gd" id="1_e7mys"]
+[ext_resource type="Texture2D" uid="uid://cg3uxaoqfq7sb" path="res://textures/cursor_point.png" id="2_0ax77"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_le5e8"]
 
@@ -12,3 +13,18 @@ shape = SubResource("CapsuleShape3D_le5e8")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_0ax77")
