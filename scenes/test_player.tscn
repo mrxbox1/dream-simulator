@@ -14,7 +14,7 @@ shape = SubResource("CapsuleShape3D_le5e8")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="Interaction" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, -1)
 collide_with_areas = true
@@ -30,5 +30,5 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("2_0ax77")
 
-[connection signal="child_entered_tree" from="RayCast3D" to="." method="_on_ray_cast_3d_child_entered_tree"]
-[connection signal="child_exiting_tree" from="RayCast3D" to="." method="_on_ray_cast_3d_child_exiting_tree"]
+[connection signal="child_entered_tree" from="Interaction" to="." method="_on_ray_cast_3d_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Interaction" to="." method="_on_ray_cast_3d_child_exiting_tree"]

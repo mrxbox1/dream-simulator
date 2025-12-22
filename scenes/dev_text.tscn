@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://x62m68ycv8q1"]
 
-[node name="Devtext" type="Label3D"]
+[node name="dev_text" type="Label3D"]
 billboard = 1
 text = "INSERT TEXT HERE"
 font_size = 16
