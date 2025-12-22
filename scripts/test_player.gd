@@ -5,8 +5,13 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.01
 
+
+@onready var cursor_texture = $CenterContainer/TextureRect
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,6 +44,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 # Thank you to rbarongr on GitHub for creating a First Person Controller which I pinched some code from, as you can see below.
 # You can see their repository here: https://github.com/rbarongr/GodotFirstPersonController/tree/main
 func _unhandled_input(event: InputEvent) -> void:
@@ -49,3 +55,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera3D.rotation.x - event.relative.y * MOUSE_SENSITIVITY, 
 			-1.5, 1.5
 		)
+
+
+func _on_ray_cast_3d_child_entered_tree(node: Node) -> void:
+	print("BUNP", node)
+	if node.entity_name == "ent_button":
+		cursor_texture.show()
+
+
+func _on_ray_cast_3d_child_exiting_tree(node: Node) -> void:
+	print("NYOOM", node)
+	if node.entity_name == "ent_button":
+		cursor_texture.hide()

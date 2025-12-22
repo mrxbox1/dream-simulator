@@ -1,43 +1,13 @@
-[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=9 format=3 uid="uid://crcxeioa8il8x"]
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=6 format=3 uid="uid://crcxeioa8il8x"]
 
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_tk085"]
 [ext_resource type="Resource" uid="uid://ogtnpfowx1aj" path="res://entities/test_player.tres" id="2_4dt5c"]
 [ext_resource type="Resource" uid="uid://dghoxo5e5c3sn" path="res://entities/dev_text.tres" id="3_2cgaj"]
-[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="4_058ct"]
+[ext_resource type="Resource" uid="uid://d4cggiofht3sn" path="res://entities/ent_button.tres" id="4_058ct"]
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="8_7pgwd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_12k66"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="PackedScene" id="PackedScene_jxuwn"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("ent_button", "Area3D", "CollisionShape3D", "shape"),
-"node_count": 2,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 2, 2, -1, 1, 3, 0, 0),
-"variants": [SubResource("BoxShape3D_12k66")],
-"version": 3
-}
-
-[sub_resource type="Resource" id="Resource_jgkxt"]
-script = ExtResource("4_058ct")
-scene_file = SubResource("PackedScene_jxuwn")
-classname = "ent_button"
-description = "An entity that can be interacted with by pressing E (or Left Mouse).
-It's intended for creating buttons in maps, as the name might suggest.
-
-DO NOT SKIP: this is not a button. It's an invisible entity with a collision box that detects whenever you interact with it. It CANNOT be visible, and it only represents the hitbox of a button in which an interaction would be detected."
-meta_properties = {
-"color": Color(0.87993824, 0.80066586, 0.4882443, 1),
-"size": AABB(-8, -8, -8, 8, 8, 8)
-}
-metadata/_custom_type_script = "uid://cxsqwtsqd8w33"
 
 [resource]
 script = ExtResource("8_7pgwd")
 fgd_name = "DreamSimulator"
 base_fgd_files = Array[Resource]([ExtResource("1_tk085")])
-entity_definitions = Array[Resource]([ExtResource("2_4dt5c"), ExtResource("3_2cgaj"), SubResource("Resource_jgkxt")])
+entity_definitions = Array[Resource]([ExtResource("2_4dt5c"), ExtResource("3_2cgaj"), ExtResource("4_058ct")])

@@ -373,10 +373,3 @@
 ( 752 96 48 ) ( 752 96 49 ) ( 752 97 48 ) special/skip [ 0 1 0 16 ] [ 0 0 -1 16 ] 270 1 1
 }
 }
-// entity 3
-{
-"classname" "dev_text"
-"origin" "720 80 88"
-"text" "ent_button"
-"size" "12"
-}
