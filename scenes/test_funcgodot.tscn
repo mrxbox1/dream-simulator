@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://wqsqanubbsl1"]
+[gd_scene load_steps=36 format=4 uid="uid://wqsqanubbsl1"]
 
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_84nub"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_m8e4r"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="4_a72k8"]
 [ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="5_a72k8"]
 [ext_resource type="Material" uid="uid://uhx8rek4fogo" path="res://materials/concrete-1.tres" id="5_dne10"]
-[ext_resource type="PackedScene" uid="uid://babu4uwj582pk" path="res://scenes/ent_button.tscn" id="7_dne10"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dne10"]
 albedo_texture = ExtResource("4_a72k8")
@@ -230,9 +229,6 @@ shape = SubResource("ConvexPolygonShape3D_wemd5")
 
 [node name="entity_1_test_player" parent="FuncGodotMap" instance=ExtResource("5_a72k8")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.5, 5.5)
-
-[node name="entity_2_ent_button" parent="FuncGodotMap" instance=ExtResource("7_dne10")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.25, 0.75, 24.25)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tkvyb")
