@@ -7,6 +7,7 @@ const MOUSE_SENSITIVITY = 0.01
 
 
 @onready var cursor_texture = $CenterContainer/TextureRect
+@onready var interaction_ray = $Camera3D/Interaction
 
 
 func _ready() -> void:
@@ -30,6 +31,19 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
+	# Spaghetti code for interaction system
+	# Thank you to phazorknight on the Godot Forums https://forum.godotengine.org/t/godot-4-tutorials-on-interactions/36641
+	if interaction_ray.is_colliding():
+		var interactable = interaction_ray.get_collider()
+		#print(interactable.name)
+		#print(interactable.get_collision_layer())
+		if interactable != null and interactable.get_collision_layer() == 2:
+			cursor_texture.visible = true
+		else:
+			cursor_texture.visible = false
+	else:
+		cursor_texture.visible = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -55,15 +69,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera3D.rotation.x - event.relative.y * MOUSE_SENSITIVITY, 
 			-1.5, 1.5
 		)
-
-
-func _on_ray_cast_3d_child_entered_tree(node: Node) -> void:
-	print("BUNP", node)
-	if node.entity_name == "ent_button":
-		cursor_texture.show()
-
-
-func _on_ray_cast_3d_child_exiting_tree(node: Node) -> void:
-	print("NYOOM", node)
-	if node.entity_name == "ent_button":
-		cursor_texture.hide()

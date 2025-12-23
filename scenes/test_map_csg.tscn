@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ca5bv3l551mp8"]
+[gd_scene load_steps=14 format=3 uid="uid://ca5bv3l551mp8"]
 
 [ext_resource type="PackedScene" uid="uid://ck3sdcs5l8njj" path="res://scenes/test_player.tscn" id="1_eoh8a"]
 [ext_resource type="Texture2D" uid="uid://0viemutak6qk" path="res://textures/grass-1.png" id="1_utxhk"]
+[ext_resource type="PackedScene" uid="uid://i5xkjk7nvcxb" path="res://scenes/test_button.tscn" id="3_1bd3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eoh8a"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -124,8 +125,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 size = Vector3(28, 1, 26)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -24.5)
-size = Vector3(28, 1, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -33)
+size = Vector3(28, 1, 41)
 material = SubResource("StandardMaterial3D_1bd3d")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
@@ -141,10 +142,13 @@ omni_range = 10.810936
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.9297186, -0.25169063, 0.2688402, -2.9802322e-08, 0.7300071, 0.6834395, -0.3682706, -0.6354064, 0.6787013, 0, 0, 0)
+transform = Transform3D(0.9297187, -0.25169063, 0.2688402, -2.9802322e-08, 0.7300071, 0.6834395, -0.36827058, -0.6354064, 0.6787013, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_17evi")
 }
 autoplay = "daynightcycle"
+
+[node name="TesterButton" parent="." instance=ExtResource("3_1bd3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1193419, -46.26921)
