@@ -40,6 +40,8 @@ func _physics_process(delta: float) -> void:
 		#print(interactable.get_collision_layer())
 		if interactable != null and interactable.get_collision_layer() == 2:
 			cursor_texture.visible = true
+			if Input.is_action_just_pressed("interact"):
+				interactable.trigger()
 		else:
 			cursor_texture.visible = false
 	else:
