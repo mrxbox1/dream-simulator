@@ -1,4 +1,4 @@
-[gd_scene load_steps=252 format=4 uid="uid://bt5pmyk0leiu3"]
+[gd_scene load_steps=253 format=4 uid="uid://bt5pmyk0leiu3"]
 
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_r5f7o"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_61rke"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="6_di7ku"]
 [ext_resource type="Material" uid="uid://br7iwqo0hn0nn" path="res://materials/concrete-2.tres" id="7_a6sfo"]
 [ext_resource type="Material" uid="uid://cnwhlwafr23we" path="res://materials/headlight-1.tres" id="8_m33l0"]
+[ext_resource type="Material" uid="uid://cokx6y41ra21g" path="res://materials/glass-1.tres" id="8_rnmvn"]
 [ext_resource type="PackedScene" uid="uid://x62m68ycv8q1" path="res://scenes/dev_text.tscn" id="9_hxbpa"]
 [ext_resource type="Material" uid="uid://calxk1gnm1shu" path="res://materials/car-grille-1.tres" id="9_kjfyo"]
 [ext_resource type="Material" uid="uid://0tjki3g8lr3d" path="res://materials/license-plate-other.tres" id="10_22j8e"]
@@ -97,6 +98,18 @@ _surfaces = [{
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 44,
 "vertex_data": PackedByteArray("AAACwgAAQD8AADDBAAD8wQAAQD8AADDBAAD8wQAAQD8AAOTBAAACwgAAQD8AAOTBAAD8wQAA8EAAADDBAAD8wQAA8EAAAOTBAAD8wQAAQD8AAOTBAAD8wQAAQD8AADDBAAD8wQAAQD8AADDBAAACwgAAQD8AADDBAAACwgAA8EAAADDBAAD8wQAA8EAAADDBAADQwQAAOEEAAOTBAADUwQAAOEEAAOTBAADUwQAAAEEAAOTBAADQwQAAAEEAAOTBAADUwQAAAEEAADDBAADUwQAAAEEAAOTBAADUwQAAOEEAAOTBAADUwQAAOEEAADDBAADUwQAAAEEAADDBAADQwQAAAEEAADDBAADQwQAAAEEAAOTBAADUwQAAAEEAAOTBAADUwQAAOEEAADDBAADUwQAAOEEAAOTBAADQwQAAOEEAAOTBAADQwQAAOEEAADDBAADQwQAAOEEAADDBAADQwQAAOEEAAOTBAADQwQAAAEEAAOTBAADQwQAAAEEAADDBAADQwQAAAEEAADDBAADUwQAAAEEAADDBAADUwQAAOEEAADDBAADQwQAAOEEAADDBAAD8wQAAOEEAADDBAAD8wQAAOEEAAOTBAAD8wQAA8EAAAOTBAAD8wQAA8EAAADDBAAD8wQAA8EAAADDBAAACwgAA8EAAADDBAAACwgAAOEEAADDBAAD8wQAAOEEAADDB/38AAP//////fwAA//////9/AAD//////38AAP////////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/////f/////////9//////////3//////////f///////f/9/////v/9//3////+//3//f////7//f/9/////vw==")
+}, {
+"aabb": AABB(-26.5, 5.5, -22, 36.75, 2, 11),
+"attribute_data": PackedByteArray("AAAkwQAA8MAAANRBAADwwAAA1EEAALDAAAAkwQAAsMAAADDBAACwwAAAQMEAALDAAABAwQAA8MAAADDBAADwwAAAMEEAANRBAAAwQQAAJMEAAEBBAAAkwQAAQEEAANRBAAAwwQAA1EEAAEDBAADUQQAAQMEAACTBAAAwwQAAJMEAADBBAADwwAAAQEEAAPDAAABAQQAAsMAAADBBAACwwAAAJEEAALDAAADUwQAAsMAAANTBAADwwAAAJEEAAPDAAADMQQAA8MAAANRBAADwwAAA1EEAALDAAADMQQAAsMAAAEDBAACwwAAAsMEAALDAAACwwQAA8MAAAEDBAADwwAAAQEEAANRBAABAQQAAzEEAALBBAADMQQAAsEEAANRBAABAwQAA1EEAALDBAADUQQAAsMEAAMxBAABAwQAAzEEAAEBBAADwwAAAsEEAAPDAAACwQQAAsMAAAEBBAACwwAAAzMEAALDAAADUwQAAsMAAANTBAADwwAAAzMEAAPDA"),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8A"),
+"material": ExtResource("8_rnmvn"),
+"name": "glass-1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAkQQAA8EAAAEDBAADUwQAA8EAAAEDBAADUwQAAsEAAAEDBAAAkQQAAsEAAAEDBAADUwQAAsEAAADDBAADUwQAAsEAAAEDBAADUwQAA8EAAAEDBAADUwQAA8EAAADDBAADUwQAAsEAAADDBAAAkQQAAsEAAADDBAAAkQQAAsEAAAEDBAADUwQAAsEAAAEDBAADUwQAA8EAAADDBAADUwQAA8EAAAEDBAAAkQQAA8EAAAEDBAAAkQQAA8EAAADDBAAAkQQAA8EAAADDBAAAkQQAA8EAAAEDBAAAkQQAAsEAAAEDBAAAkQQAAsEAAADDBAAAkQQAAsEAAADDBAADUwQAAsEAAADDBAADUwQAA8EAAADDBAAAkQQAA8EAAADDBAADMwQAA8EAAALDBAADUwQAA8EAAALDBAADUwQAAsEAAALDBAADMwQAAsEAAALDBAADUwQAAsEAAAEDBAADUwQAAsEAAALDBAADUwQAA8EAAALDBAADUwQAA8EAAAEDBAADUwQAAsEAAAEDBAADMwQAAsEAAAEDBAADMwQAAsEAAALDBAADUwQAAsEAAALDBAADUwQAA8EAAAEDBAADUwQAA8EAAALDBAADMwQAA8EAAALDBAADMwQAA8EAAAEDBAADMwQAA8EAAAEDBAADMwQAA8EAAALDBAADMwQAAsEAAALDBAADMwQAAsEAAAEDBAADMwQAAsEAAAEDBAADUwQAAsEAAAEDBAADUwQAA8EAAAEDBAADMwQAA8EAAAEDB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }, {
 "aabb": AABB(0, 1.5, -0.9998779, 0.5, 0.5, 4.999878),
 "attribute_data": PackedByteArray("AACAMwAAQMAA+H+/AABAwAD4f78AAIDAAACAMwAAgMAAAICzAAAAAAAAgLMAAIC/APh/PwAAgL8A+H8/AAAAAAAAgLMAAIDAAPh/PwAAgMAA+H8/AABAwAAAgLMAAEDAAAAAPwAAQMAAAAAAAABAwAAAAAAAAIDAAAAAPwAAgMAAAAC/AACAwAAAAAAAAIDAAAAAAAAAQMAAAAC/AABAwAAAgEAAAEDAAABAQAAAQMAAAEBAAACAwAAAgEAAAIDAAACAwAAAAAAAAIDAAACAvwAAQMAAAIC/AABAwAAAAAAAAIDAAACAwAAAQMAAAIDAAABAwAAAQMAAAIDAAABAwA=="),
@@ -1563,7 +1576,7 @@ shape = SubResource("ConvexPolygonShape3D_jnnyj")
 shape = SubResource("ConvexPolygonShape3D_4jcch")
 
 [node name="entity_1_test_player" parent="FuncGodotMap" instance=ExtResource("5_di7ku")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 2, -3)
+transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, 1, 2, -5)
 
 [node name="entity_2_dev_text" parent="FuncGodotMap" instance=ExtResource("9_hxbpa")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.25, 3.25, -10.75)
