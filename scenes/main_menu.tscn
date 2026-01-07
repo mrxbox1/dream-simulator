@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://4rwcnlfbefyr"]
+
+[ext_resource type="Script" uid="uid://d2sn0v85hxk30" path="res://scripts/menu_scenebutton.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://c4nnu8no7vspo" path="res://scenes/pit_entrance.tscn" id="2_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://bt5pmyk0leiu3" path="res://scenes/urban_0.tscn" id="3_oa1go"]
+[ext_resource type="PackedScene" uid="uid://wqsqanubbsl1" path="res://scenes/test_funcgodot.tscn" id="4_tbmy8"]
+[ext_resource type="PackedScene" uid="uid://ca5bv3l551mp8" path="res://scenes/test_map_csg.tscn" id="5_jk1qb"]
+[ext_resource type="PackedScene" uid="uid://cxre40bxodp5k" path="res://scenes/temp_menu.tscn" id="6_5dd4i"]
+
+[node name="Node" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Main menu
+(Sadly, still a work in progress)"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control/CenterContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Control/CenterContainer/HFlowContainer"]
+layout_mode = 2
+text = "pit_entrance"
+script = ExtResource("1_l6cm7")
+scene = ExtResource("2_rtw2f")
+
+[node name="Button2" type="Button" parent="Control/CenterContainer/HFlowContainer"]
+layout_mode = 2
+text = "urban_0"
+script = ExtResource("1_l6cm7")
+scene = ExtResource("3_oa1go")
+
+[node name="Button4" type="Button" parent="Control/CenterContainer/HFlowContainer"]
+layout_mode = 2
+text = "test_funcgodot"
+script = ExtResource("1_l6cm7")
+scene = ExtResource("4_tbmy8")
+
+[node name="Button5" type="Button" parent="Control/CenterContainer/HFlowContainer"]
+layout_mode = 2
+text = "test_map_csg"
+script = ExtResource("1_l6cm7")
+scene = ExtResource("5_jk1qb")
+
+[node name="Button" type="Button" parent="Control/CenterContainer/HFlowContainer"]
+layout_mode = 2
+text = "\"dev menu\""
+script = ExtResource("1_l6cm7")
+scene = ExtResource("6_5dd4i")
+
+[connection signal="pressed" from="Control/CenterContainer/HFlowContainer/Button3" to="Control/CenterContainer/HFlowContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HFlowContainer/Button2" to="Control/CenterContainer/HFlowContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HFlowContainer/Button4" to="Control/CenterContainer/HFlowContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HFlowContainer/Button5" to="Control/CenterContainer/HFlowContainer/Button5" method="_on_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HFlowContainer/Button" to="Control/CenterContainer/HFlowContainer/Button" method="_on_pressed"]

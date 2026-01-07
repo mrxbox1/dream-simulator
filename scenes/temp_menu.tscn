@@ -24,11 +24,10 @@ the time being, but that sounds lamer, so \"dev menu\" it is!)
 (Though, I actually named the scene file of this screen \"temp_menu.tscn\"...I'm a very decisive person.)
 
 
-(A word of advice: maybe don't input the location of this scene (the one you're in right now.)
+(A word of advice: maybe don't input the location of this scene (the one you're in right now.))
 (Godot doesn't like recursion when it comes to scenes, and even at runtime, I'm not sure what could happen.)
 
-Input the location of a .tscn file here and press ENTER to...well, enter that scene.
-I wanted to make a good UI with a list of scenes you could select, but sometimes, we just can't have nice things."
+Input the location of a .tscn file here and press ENTER to enter that scene."
 label_settings = SubResource("LabelSettings_p6lgx")
 autowrap_mode = 3
 
