@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dhjkkha82jgmq"
+path="res://.godot/imported/neighbourhood_pool.map-922ec548b2708dfbb1ef9d808e888b1e.tres"
+
+[deps]
+
+source_file="res://maps/neighbourhood_pool.map"
+dest_files=["res://.godot/imported/neighbourhood_pool.map-922ec548b2708dfbb1ef9d808e888b1e.tres"]
+
+[params]
+
