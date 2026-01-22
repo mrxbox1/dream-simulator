@@ -19,8 +19,11 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5f7o"]
 sky_top_color = Color(0.37420884, 0.43416956, 0.5059693, 1)
-sky_horizon_color = Color(0.64316666, 0.65040684, 0.6593567, 1)
-ground_horizon_color = Color(0.64316666, 0.65040684, 0.6593567, 1)
+sky_horizon_color = Color(0.6431373, 0.6509804, 0.26666668, 1)
+sky_energy_multiplier = 2.13
+ground_bottom_color = Color(0.14626765, 0.121379636, 0.09337447, 1)
+ground_horizon_color = Color(0.6431373, 0.6509804, 0.48235294, 1)
+ground_curve = 0.0313834
 
 [sub_resource type="Sky" id="Sky_61rke"]
 sky_material = SubResource("ProceduralSkyMaterial_r5f7o")
@@ -870,6 +873,10 @@ points = PackedVector3Array(-19, 5.5, -12.5, -19, 5, -12.5, -22.5, 5.5, -12.5, -
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_v68m1")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9188945, 0.39450333, 0, -0.39239228, 0.9139774, 0.10331335, 0.04075746, -0.09493407, 0.9946489, 0, 0, 0)
+light_bake_mode = 1
+
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_r5f7o")
 local_map_file = "uid://d1l531pbgf0hf"
@@ -1580,7 +1587,8 @@ transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, 1, 2
 
 [node name="entity_2_dev_text" parent="FuncGodotMap" instance=ExtResource("9_hxbpa")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.25, 3.25, -10.75)
-font_size = 6
+text = "weird cat cafe place + playroom, i guess"
+font_size = 24
 script = ExtResource("10_51dtk")
 entProperties = {
 "classname": "dev_text",
@@ -1591,7 +1599,8 @@ entProperties = {
 
 [node name="entity_3_dev_text" parent="FuncGodotMap" instance=ExtResource("9_hxbpa")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -16.75, 5.25, -12.75)
-font_size = 6
+text = "from here: a view of a stroad. it's a hot day outside."
+font_size = 12
 script = ExtResource("10_51dtk")
 entProperties = {
 "classname": "dev_text",
@@ -1602,7 +1611,8 @@ entProperties = {
 
 [node name="entity_4_dev_text" parent="FuncGodotMap" instance=ExtResource("9_hxbpa")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.75, 5.25, -21.75)
-font_size = 6
+text = "empty playroom"
+font_size = 12
 script = ExtResource("10_51dtk")
 entProperties = {
 "classname": "dev_text",
@@ -1613,7 +1623,8 @@ entProperties = {
 
 [node name="entity_5_dev_text" parent="FuncGodotMap" instance=ExtResource("9_hxbpa")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -25.75, 5.25, -24.75)
-font_size = 6
+text = "exit to alley stairs"
+font_size = 12
 script = ExtResource("10_51dtk")
 entProperties = {
 "classname": "dev_text",
